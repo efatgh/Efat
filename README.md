@@ -1,5 +1,5 @@
-# Efat
-solve equation math in matlab.
+#optimal placment DG and Capacitors in  real 76 bus system
+
 Due to the expansion of distribution networks as well as the increase in electricity demand, 
 the use of distributed generation sources and capacitor banks is increasing day by day. Determining the installation location and capacity of these tools are two important and effective factors in reducing network power and improving network performance. 
 If connected to the grid at the right place, distributed generation power plants and capacitors will have various effects,

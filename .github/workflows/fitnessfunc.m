@@ -1,0 +1,17 @@
+function out = fitnessfunc(y,ng,nc,Nbus)
+%UNTITLED Summary of this function goes here
+%   Detailed explanation goes here
+VPU = zeros(Nbus,24);
+PQ = zeros(1,24);
+for t=1:24
+    DistLoadFlowSolution=powerflow(y,t,ng,nc);
+    PQ(t) = DistLoadFlowSolution.SLosskVA;
+    VPU(:,t) = DistLoadFlowSolution.VmagPU;
+end
+Cp = funcprice(y,ng,nc);
+W1 = 0.5;
+W2 = 0.3;
+W3 = 0.2;
+out = W1*sum(PQ) + W2*sum(sum(abs(1-VPU)))+ W3*sum(Cp);
+end 
+
